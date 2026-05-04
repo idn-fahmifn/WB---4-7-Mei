@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
 
+    <!-- memanggil css dengan external css -->
+    <link rel="stylesheet" href="style.css">
+
     <!-- internal css -->
     <style>
       .text-blue {
@@ -16,14 +19,24 @@
       .text-content {
         font-family: Verdana, Geneva, Tahoma, sans-serif;
       }
+      .bg-blue{
+        background-color: #0088cc;
+        color: #ffffff;
+      }
+      .text-large{
+        font-size: 1.5rem;
+      }
     </style>
   </head>
   <body>
-    <h1 class="text-blue text-title">Ini adalah elemen</h1>
+    <h1 class="text-red text-title">Ini adalah elemen</h1>
     <p class="text-content">
       <span class="text-blue">Lorem ipsum dolor sit amet,</span> consectetur
       adipisicing elit. Similique iste minima, nesciunt numquam hic vel nihil a
       reprehenderit exercitationem quisquam!
+    </p>
+    <p class="bg-blue text-large">
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Provident, accusamus.
     </p>
   </body>
 </html>
