@@ -10,6 +10,7 @@
 
     <!-- internal css -->
     <style>
+        
       .text-blue {
         color: #0088cc;
       }
@@ -26,17 +27,47 @@
       .text-large{
         font-size: 1.5rem;
       }
+      
+      .fw-bold{
+        font-weight: 600;
+      }
+
+      .text-right{
+        text-align: right;
+      }
+
+      .container{
+        width: 100dvw;
+        height: 60dvh;
+        background-color: #0088cc;
+      }
+      .child{
+        background-color: aliceblue;
+        width: 60%;
+        height: 30%;
+      }
+      
     </style>
   </head>
   <body>
+
+    <div class="container">
+        <div class="child">
+            <p>Ini adalah child</p>
+        </div>
+    </div>
+
     <h1 class="text-red text-title">Ini adalah elemen</h1>
-    <p class="text-content">
+    <p class="font-google fw-bold text-right">
       <span class="text-blue">Lorem ipsum dolor sit amet,</span> consectetur
       adipisicing elit. Similique iste minima, nesciunt numquam hic vel nihil a
       reprehenderit exercitationem quisquam!
     </p>
-    <p class="bg-blue text-large">
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Provident, accusamus.
+    <p class="bg-blue font-google text-large">
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Provident, accusamus. Google
     </p>
+
+    
+
   </body>
 </html>
