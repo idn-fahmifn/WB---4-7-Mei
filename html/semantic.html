@@ -3,7 +3,15 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Simple Semantic</title>
+    <link rel="stylesheet" href="style.css" />
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <!-- Semantic membuat element semakin jelas tugas -->
@@ -20,45 +28,49 @@
                            7. <footer> = kaki untuk copyright, footer. didefinisikan hanya SEKALi
     -->
 
-    <header>
-        <!-- memberikan lgo bisa pake image atau header -->
-         <nav>
-            <ul>
-                <li>Home</li>
-                <li>Service</li>
-                <li>Product</li>
-                <li>Gallery</li>
-                <li>Contact Us</li>
-            </ul>
-         </nav>
+    <header class="area-header">
+      <!-- memberikan logo bisa pake image atau header -->
+      <div class="logo">
+        <img
+          src="https://www.idn.id/wp-content/uploads/2023/01/LOGO-ID-Networkers-IDN.ID-Merah-1024x320.png"
+          alt="Logo"
+        />
+      </div>
+      <nav>
+        <ul class="navigation">
+          <li class="nav-item"><a href="">Home</a></li>
+          <li class="nav-item"><a href="">Service</a></li>
+          <li class="nav-item"><a href="">Product</a></li>
+          <li class="nav-item"><a href="">Gallery</a></li>
+        </ul>
+      </nav>
+      
+      <a href="" class="btn-call">Call Us</a>
+
     </header>
     <main>
-        <section id="product">
-            <!-- masukan berupa card -->
-        </section>
-        <section id="myservice">
-            <!-- jelaskan tentang service ada apa aja -->
-        </section>
-        <section id="gallery">
-            <!-- tampilkan gambar -->
-        </section>
-        <section id="article">
-            <article>
-                <!-- article yang panjang pake lorem -->
-            </article>
-        </section>
+      <section id="product">
+        <!-- masukan berupa card -->
+      </section>
+      <section id="myservice">
+        <!-- jelaskan tentang service ada apa aja -->
+      </section>
+      <section id="gallery">
+        <!-- tampilkan gambar -->
+      </section>
+      <section id="article">
+        <article>
+          <!-- article yang panjang pake lorem -->
+        </article>
+      </section>
 
-        <aside>
-            <!-- berita -->
-             <!-- iklan -->
-        </aside>
-
+      <aside>
+        <!-- berita -->
+        <!-- iklan -->
+      </aside>
     </main>
     <footer>
-        <!-- isinya bisa copyright dan medsos -->
+      <!-- isinya bisa copyright dan medsos -->
     </footer>
-
-    
-
-</body>
+  </body>
 </html>
