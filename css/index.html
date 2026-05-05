@@ -6,16 +6,15 @@
     <title>Document</title>
 
     <!-- memanggil css dengan external css -->
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css" />
 
     <!-- internal css -->
     <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
 
-        *{
-            margin: 0;
-            padding: 0;
-        }
-        
       .text-blue {
         color: #0088cc;
       }
@@ -25,43 +24,71 @@
       .text-content {
         font-family: Verdana, Geneva, Tahoma, sans-serif;
       }
-      .bg-blue{
+      .bg-blue {
         background-color: #0088cc;
         color: #ffffff;
       }
-      .text-large{
+      .text-large {
         font-size: 1.5rem;
       }
-      
-      .fw-bold{
+
+      .fw-bold {
         font-weight: 600;
       }
 
-      .text-right{
+      .text-right {
         text-align: right;
       }
 
-      .container{
-        width: 100dvw;
-        height: 60dvh;
-        background-color: #0088cc;
-        padding: 30px 0; /*padding-top, padding-left, padding-right, padding-bottom*/
+      .container {
+        width: 90dvw;
+        min-height: 60dvh; /*lawannya max-height*/
+        padding: 30px; /*padding-top, padding-left, padding-right, padding-bottom*/
+        margin: 30px 10px;
+        border: #3e3e3e40 0.5px solid;
       }
-      .child{
+      .child {
         background-color: aliceblue;
         width: 60%;
         height: 30%;
-        margin: 0 40px; /*margin-top, margin-left, margin-right, margin-bottom*/
+        margin: 40px; /*margin-top, margin-left, margin-right, margin-bottom*/
       }
-      
+
+      .card{
+        width: 200px;
+        height: 100px;
+        background: #a5a5a5;
+        margin: 20px;
+      }
+
+      .d-block{
+        display: block;
+      }
+
+      .d-inline{
+        display: inline;
+      }
+
+      /* navbar */
+      .navbar{
+        width: 60%;
+        height: 60px;
+        border: #3e3e3e40 0.5px solid;
+        margin-top: 20px;
+        padding: 30px;
+      }
+      .list-item{
+        display: inline;
+        margin: 20px;
+      }
+
     </style>
   </head>
   <body>
-
     <div class="container">
-        <div class="child">
-            <p>Ini adalah child</p>
-        </div>
+      <div class="child">
+        <p>Ini adalah child</p>
+      </div>
     </div>
 
     <h1 class="text-red text-title">Ini adalah elemen</h1>
@@ -71,10 +98,54 @@
       reprehenderit exercitationem quisquam!
     </p>
     <p class="bg-blue font-google text-large">
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Provident, accusamus. Google
+      Lorem ipsum, dolor sit amet consectetur adipisicing elit. Provident,
+      accusamus. Google
     </p>
 
-    
+    <!-- container display block  -->
 
+    <div class="container">
+      <h2 class="font-google">Display Block</h2>
+      <ul>
+        <li class="font-google">Selalu membuat garis baru.</li>
+        <li class="font-google">Bisa diatur height dan width.</li>
+        <li class="font-google">Bisa diatur margin dan padding.</li>
+      </ul>
+
+      <div class="card">Card 1</div>
+      <div class="card">card 2</div>
+      <div class="card">card 3</div>
+
+      <span class="card d-block">Span card 1</span>
+      <span class="card d-block">span card 2</span>
+      <span class="card d-block">span card 3</span>
+    </div>
+
+    <div class="container">
+        <h2 class="font-google">Display Inline</h2>
+      <ul>
+        <li class="font-google">Menambah elemen pada baris yang sama</li>
+        <li class="font-google">Ukuran sesuai dengan isi konten</li>
+        <li class="font-google">Margin hanya berlaku margin X</li>
+      </ul>
+
+      <div class="card d-inline">Card 1</div>
+      <div class="card d-inline">card 2</div>
+      <div class="card d-inline">card 3</div>
+
+      <span class="card d-inline">Span card 1</span>
+      <span class="card d-inline">span card 2</span>
+      <span class="card d-inline">span card 3</span>
+
+      <!-- contoh penerapan pada navbar -->
+       <div class="navbar">
+        <ul>
+            <li class="list-item">Home</li>
+            <li class="list-item">Service</li>
+            <li class="list-item">About Me</li>
+        </ul>
+       </div>
+
+    </div>
   </body>
 </html>
