@@ -69,6 +69,14 @@
         display: inline;
       }
 
+      .d-inline-block{
+        display: inline-block;
+      }
+
+      .card-relative{
+        position: relative;
+      }
+
       /* navbar */
       .navbar{
         width: 60%;
@@ -145,7 +153,56 @@
             <li class="list-item">About Me</li>
         </ul>
        </div>
-
     </div>
+
+    <div class="container">
+        <h1>Position Relative</h1>
+        <div class="card d-inline-block">kartu Pertama</div>
+        <div class="card d-inline-block card-relative" style="bottom: 40px;">Kartu Kedua</div>
+        <div class="card d-inline-block card-relative">
+            <h5>Ini adalah kartu Relative</h5>
+            <span class="badge-promo">Diskon 10%</span>
+        </div>
+        <div class="card d-inline-block">
+            <h5>Ini adalah kartu bukan Relative</h5>
+            <span class="badge-promo">Diskon 10%</span>
+        </div>
+        <div class="card d-inline-block">Kartu kelima</div>
+        <div class="card d-inline-block">Kartu keenam</div>
+    </div>
+
+    <div class="container">
+      <h2 class="font-google">Display Inline Block</h2>
+      <ul>
+        <li class="font-google">Selalu membuat elemn dalam 1 baris.</li>
+        <li class="font-google">Bisa atur ukuran width dan height.</li>
+        <li class="font-google">Padding dan margin berlaku.</li>
+      </ul>
+
+      <div class="card d-inline-block">Card 1</div>
+      <div class="card d-inline-block">card 2</div>
+      <div class="card d-inline-block">card 3</div>
+
+      <span class="card d-inline-block">Span card 1</span>
+      <span class="card d-inline-block">span card 2</span>
+      <span class="card d-inline-block">span card 3</span>
+    </div>
+
+    <div class="container">
+      <h2 class="font-google">Display None</h2>
+      <ul>
+        <li class="font-google">Menghilangakan elemen yang ada.</li>
+        <li class="font-google">Berbeda dengan visiblity hide.</li>
+      </ul>
+
+      <div class="card d-inline-block" style="display: none;">Card 1</div>
+      <div class="card d-inline-block">card 2</div>
+      <div class="card d-inline-block">card 3</div>
+      <div class="card d-inline-block">card 4</div>
+      <div class="card d-inline-block" style="visibility: hidden;">card 5</div>
+      <div class="card d-inline-block">card 6</div>
+    </div>
+
+
   </body>
 </html>
