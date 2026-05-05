@@ -82,54 +82,109 @@
   border: #3e3e3e40 0.5px solid;
   margin-top: 20px;
   padding: 30px;
+  animation: background 2s infinite alternate;
 }
+
 .list-item {
   display: inline;
   margin: 20px;
 }
 
-.call-me{
-    background: linear-gradient(to top right, #0088cc, #962ef8);
-    width: 200px;
-    padding: 20px;
-    position: fixed;
-    bottom: 10px;
-    right: 20px;
-    border-radius: 1000px;
-    text-align: center;
+.call-me {
+  background: linear-gradient(to top right, #0088cc, #962ef8);
+  width: 200px;
+  padding: 20px;
+  position: fixed;
+  bottom: 10px;
+  right: 20px;
+  border-radius: 1000px;
+  text-align: center;
 }
 
-.sticky{
-    position: sticky;
-    top: 10px;
-    bottom: 5px;
-    background: #ffffff;
-    z-index: 10;
+/* simple animasi saat di hover */
+.call-me:hover {
+  background: #ff0000;
+  cursor: pointer;
+  transition: 1.5s;
 }
 
-.d-flex{
-    display: flex;
-    flex-wrap: wrap;
-    /* gap: 10px; */
+.sticky {
+  position: sticky;
+  top: 10px;
+  bottom: 5px;
+  background: #ffffff;
+  z-index: 10;
 }
 
-.card-flex{
-    background-color: #f0f8ff;
-    border: solid #4e4e4e50 0.6px;
-    padding: 10px;
-    /* height: 100px; */
+.d-flex {
+  display: flex;
+  flex-wrap: wrap;
+  /* gap: 10px; */
+}
 
-    flex-basis: 250px; /*nilai default*/
-    margin: 10px;
-    flex-grow: 1;
-    flex-shrink: 1;
+.card-flex {
+  background-color: #f0f8ff;
+  border: solid #4e4e4e50 0.6px;
+  padding: 10px;
+  /* height: 100px; */
+
+  flex-basis: 250px; /*nilai default*/
+  margin: 10px;
+  flex-grow: 1;
+  flex-shrink: 1;
+}
+
+.d-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.card-grid {
+  background: #0088cc;
+  border: 0.5px #ffffff solid;
 }
 
 .text-red {
   color: #ff0000;
 }
 
-
 .font-google {
   font-family: "Google Sans", sans-serif;
+}
+
+@media screen and (max-width: 768px) {
+  .d-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .ngilang {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .d-grid {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .ngilang {
+    display: block;
+  }
+}
+
+@keyframes background {
+  0% {
+    background-color: #ff0000;
+    transform: translateY(-100px);
+  }
+  25% {
+    background-color: #ffae00;
+  }
+  50% {
+    background-color: #62ff00;
+  }
+  75% {
+    background-color: #0088cc;
+  }
+  100% {
+    background-color: #ffffff;
+  }
 }
