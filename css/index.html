@@ -9,88 +9,7 @@
     <link rel="stylesheet" href="style.css" />
 
     <!-- internal css -->
-    <style>
-      * {
-        margin: 0;
-        padding: 0;
-      }
-
-      .text-blue {
-        color: #0088cc;
-      }
-      .text-title {
-        font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
-      }
-      .text-content {
-        font-family: Verdana, Geneva, Tahoma, sans-serif;
-      }
-      .bg-blue {
-        background-color: #0088cc;
-        color: #ffffff;
-      }
-      .text-large {
-        font-size: 1.5rem;
-      }
-
-      .fw-bold {
-        font-weight: 600;
-      }
-
-      .text-right {
-        text-align: right;
-      }
-
-      .container {
-        width: 90dvw;
-        min-height: 60dvh; /*lawannya max-height*/
-        padding: 30px; /*padding-top, padding-left, padding-right, padding-bottom*/
-        margin: 30px 10px;
-        border: #3e3e3e40 0.5px solid;
-      }
-      .child {
-        background-color: aliceblue;
-        width: 60%;
-        height: 30%;
-        margin: 40px; /*margin-top, margin-left, margin-right, margin-bottom*/
-      }
-
-      .card{
-        width: 200px;
-        height: 100px;
-        background: #a5a5a5;
-        margin: 20px;
-      }
-
-      .d-block{
-        display: block;
-      }
-
-      .d-inline{
-        display: inline;
-      }
-
-      .d-inline-block{
-        display: inline-block;
-      }
-
-      .card-relative{
-        position: relative;
-      }
-
-      /* navbar */
-      .navbar{
-        width: 60%;
-        height: 60px;
-        border: #3e3e3e40 0.5px solid;
-        margin-top: 20px;
-        padding: 30px;
-      }
-      .list-item{
-        display: inline;
-        margin: 20px;
-      }
-
-    </style>
+    <style></style>
   </head>
   <body>
     <div class="container">
@@ -130,7 +49,7 @@
     </div>
 
     <div class="container">
-        <h2 class="font-google">Display Inline</h2>
+      <h2 class="font-google">Display Inline</h2>
       <ul>
         <li class="font-google">Menambah elemen pada baris yang sama</li>
         <li class="font-google">Ukuran sesuai dengan isi konten</li>
@@ -146,29 +65,47 @@
       <span class="card d-inline">span card 3</span>
 
       <!-- contoh penerapan pada navbar -->
-       <div class="navbar">
+      <div class="navbar">
         <ul>
-            <li class="list-item">Home</li>
-            <li class="list-item">Service</li>
-            <li class="list-item">About Me</li>
+          <li class="list-item">Home</li>
+          <li class="list-item">Service</li>
+          <li class="list-item">About Me</li>
         </ul>
-       </div>
+      </div>
     </div>
 
     <div class="container">
-        <h1>Position Relative</h1>
-        <div class="card d-inline-block">kartu Pertama</div>
-        <div class="card d-inline-block card-relative" style="bottom: 40px;">Kartu Kedua</div>
-        <div class="card d-inline-block card-relative">
-            <h5>Ini adalah kartu Relative</h5>
-            <span class="badge-promo">Diskon 10%</span>
-        </div>
-        <div class="card d-inline-block">
-            <h5>Ini adalah kartu bukan Relative</h5>
-            <span class="badge-promo">Diskon 10%</span>
-        </div>
-        <div class="card d-inline-block">Kartu kelima</div>
-        <div class="card d-inline-block">Kartu keenam</div>
+      <h1>Position Relative</h1>
+      <div class="card d-inline-block">kartu Pertama</div>
+      <div class="card d-inline-block card-relative" style="bottom: 40px">
+        Kartu Kedua
+      </div>
+      <div class="card d-inline-block card-relative">
+        <h5>Ini adalah kartu Relative</h5>
+        <span class="badge-promo" style="top: -8px; right: -10px"
+          >Diskon 10%</span
+        >
+      </div>
+      <div class="card d-inline-block">
+        <h5>Ini adalah kartu bukan Relative</h5>
+        <span class="badge-promo" style="top: 10px">Diskon 10%</span>
+      </div>
+      <div class="card d-inline-block">Kartu kelima</div>
+      <div class="card d-inline-block">Kartu keenam</div>
+    </div>
+
+    <div class="navbar sticky">
+      <ul>
+        <li class="list-item">Home</li>
+        <li class="list-item">Service</li>
+        <li class="list-item">About Me</li>
+      </ul>
+    </div>
+
+    <div class="call-me">
+      <p class="font-google">
+        <a href="" style="color: #ffff; text-decoration: none;">Hubungi Kami</a>
+      </p>
     </div>
 
     <div class="container">
@@ -195,14 +132,12 @@
         <li class="font-google">Berbeda dengan visiblity hide.</li>
       </ul>
 
-      <div class="card d-inline-block" style="display: none;">Card 1</div>
+      <div class="card d-inline-block" style="display: none">Card 1</div>
       <div class="card d-inline-block">card 2</div>
       <div class="card d-inline-block">card 3</div>
       <div class="card d-inline-block">card 4</div>
-      <div class="card d-inline-block" style="visibility: hidden;">card 5</div>
+      <div class="card d-inline-block" style="visibility: hidden">card 5</div>
       <div class="card d-inline-block">card 6</div>
     </div>
-
-
   </body>
 </html>
