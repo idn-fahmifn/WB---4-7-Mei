@@ -107,6 +107,24 @@
     z-index: 10;
 }
 
+.d-flex{
+    display: flex;
+    flex-wrap: wrap;
+    /* gap: 10px; */
+}
+
+.card-flex{
+    background-color: #f0f8ff;
+    border: solid #4e4e4e50 0.6px;
+    padding: 10px;
+    /* height: 100px; */
+
+    flex-basis: 250px; /*nilai default*/
+    margin: 10px;
+    flex-grow: 1;
+    flex-shrink: 1;
+}
+
 .text-red {
   color: #ff0000;
 }
