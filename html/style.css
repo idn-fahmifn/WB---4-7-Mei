@@ -88,6 +88,9 @@
   background-color: #8d0000;
 }
 
+.container{
+  padding: 24px;
+}
 
 .d-grid{
   display: grid;
@@ -127,6 +130,32 @@
 .more{
   color: #cc0000;
   text-decoration: none;
+}
+
+.service{
+  margin: 24px 0;
+}
+
+.grid-service{
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+}
+
+.content-service article{
+  border: #ff000060 solid 0.5px;
+  margin-bottom: 16px;
+  padding: 16px;
+  border-radius: 8px;
+}
+
+.card-gallery{
+  border-radius: 8px;
+  transition: transform 1s ease;
+  padding: 10px;
+}
+
+.card-gallery:hover img{
+  transform: scale(1.1);
 }
 
 
