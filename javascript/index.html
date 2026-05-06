@@ -215,7 +215,7 @@
 
       //   alert("Password Benar.");
 
-      let password = "";
+      let password;
       const batas = 3;
       let percobaan = 0;
 
@@ -233,7 +233,7 @@
           alert("Kamu sudah nyoba 3 kali. Kamu diblokir");
         } else {
           alert(
-            "‼️ Password salah, coba lagi sebanyak" + batas - percobaan +" kali lagi,"
+            "‼️ Password salah, coba lagi sebanyak" + Number(batas - percobaan) + " kali lagi,"
           );
         }
       }
