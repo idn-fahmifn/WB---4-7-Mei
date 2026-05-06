@@ -44,7 +44,6 @@
 }
 
 .main-content{
-    border: 0.5px solid #4e4e4e;
     width: 100dvw;
     min-height: 60dvh;
     display: grid;
@@ -53,12 +52,10 @@
 
 .column{
     width: 100%;
-    border: #4e4e4e solid 0.5px;
 }
 
 .sidebar{
     width: 100%;
-    border: #4e4e4e solid 0.5px;
 }
 
 .hero{
@@ -69,7 +66,7 @@
 }
 
 .col{
-  height: 60dvh;
+  min-height: 90%;
   display: flex;
   justify-content: center;
   align-items: baseline;
@@ -89,5 +86,25 @@
 .btn-explore:hover{
   background-color: #8d0000;
 }
+
+.d-grid{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 8px;
+  padding: 24px;
+}
+
+.card-product{
+  border: 0.5px solid #4e4e4e50;
+  border-radius: 8px;
+  box-shadow: 0px 4px 8px -3px #4e4e4e40; /* x y blur spread */
+}
+
+.img-product{
+  width: 100%;
+}
+
+
+
 
 
