@@ -1,0 +1,245 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button type="button" onclick="return prompt('Kamu sedang belajar apa?');">
+      Klik Me
+    </button>
+
+    <!-- internal js -->
+    <script>
+      console.log("Hallo saya belajar javascript");
+
+      // variable
+      // let bisa re-usable, bisa dikosongkan (undifined)
+      let fullname = "Nama saya asep.";
+      fullname = "saya asep saefulloh";
+
+      console.log(fullname);
+
+      let gatau;
+      console.log(gatau);
+
+      // constant
+      // nilainya gabisa diubah, harus diisi tidak bisa undifined
+      const nama = "fahmi";
+      console.log(nama);
+
+      // tipedata
+      // String -> mewakili text
+
+      let name = "Fahmi Saefulloh";
+      let myName = "nama saya fahmi";
+      let bio = `hallo nama saya fahmi.`;
+      let kerja = "Idnetworkers";
+
+      console.log("hallo nama saya " + name + " saya bekerja di " + kerja);
+      console.log(
+        `Hallo nama saya adalah ${name}, Saya sedang bekerja di ${kerja} `,
+      );
+
+      // NUmber
+      let umur = "12";
+      let angka1 = 1;
+      let angka2 = 13.5;
+
+      console.log(angka1 * name);
+
+      let makan = true;
+      let test = null;
+      console.log(typeof makan);
+
+      // tipe data object
+      let biodata = {
+        nama: "asep",
+        umur: 30,
+        asal: "Jakarta Timur",
+        alamat: {
+          rt: "005",
+          rw: "003",
+          kelurahan: "rawamangun",
+          kota: "Jakarta Timur",
+        },
+      };
+
+      console.log(biodata.nama);
+      // hallo nama saya adalah asep, saya tinggal di rawamangun jakarta timur. saya berumur 30 tahun.
+
+      console.log(
+        `hallo nama saya adalah ${biodata.nama}, saya tinggal di ${biodata.alamat.kelurahan} ${biodata.asal}. saya berumur ${biodata.umur} tahun`,
+      );
+
+      let buah = ["Mangga", "apel", "jeruk", "nanas"];
+      console.log(buah[0]);
+
+      // operator aritmatik
+      let a = 20;
+      let b = 15;
+      let c = 30;
+
+      console.log(a + b); //penjumlahan
+      console.log(a - b); //pengurangan
+      console.log(a * b); //perkalian
+      console.log(a / b); //pembagian
+      console.log(a % b); //modulus
+      console.log(1 ** b); //pangkat
+      console.log(a + b * c); //penjumlahan lebih dari 2 angka
+
+      // operator penugasan
+      let d = 30;
+      d += 60; // 90
+      d -= 10; // 80
+
+      console.log(d);
+
+      let banding1 = 200;
+      let banding2 = 300;
+      let banding3 = "300";
+
+      console.log(banding1 == banding2); //false
+      console.log(banding3 == banding2); //true
+      console.log(banding1 === banding2); //false
+      console.log(banding3 === banding2); //false
+      console.log(banding3 != banding2); //false
+      console.log(banding1 != banding2); //false
+      console.log(banding3 !== banding2); //false
+
+      console.log(banding1 < banding2); //true
+      console.log(banding3 >= banding2); //false
+
+      let gajian = true;
+      let libur = false; //kerja
+      let hiling = false; //boleh hiling
+
+      // and
+      // harus keduanya bernilai true = TRUE
+      console.log(gajian && hiling); // false
+      console.log(libur && hiling); // false
+      console.log(!libur && !hiling); // false
+
+      // or
+      // jika terdapat 1 nilai true maka hasilnya = TRUE
+      console.log(gajian || hiling); // true
+      console.log(libur || hiling); // false
+
+      let age = 17;
+      let ktp =
+        age >= 17
+          ? console.log("Kamu boleh bikin KTP")
+          : console.log("kamu belum dapet izin bikin ktp");
+
+      // if conditional
+      //   let nilai = prompt("Berapa nilai kamu?");
+      //   if (nilai >= 60 && nilai < 75) {
+      //     alert("Nilai kamu belum memenuhi KKM");
+      //   } else if (nilai >= 75 && nilai <= 84) {
+      //     alert("Nilai kamu Baik");
+      //   } else if (nilai >= 85 && nilai <= 100) {
+      //     alert("Nilai kamu Luar biasa");
+      //   } else if (nilai < 60 || nilai > 100) {
+      //     alert("Nilai kamu salah");
+      //   } else {
+      //     alert("Kamu salah masukin nilai!");
+      //   }
+
+      // switch
+      //   let hari = prompt("Masukan nama hari");
+
+      //   switch (hari.toLocaleLowerCase()) {
+      //     case "senin":
+      //       alert("masih males kerja");
+      //       break;
+
+      //     case "selasa":
+      //       alert("Kerja normal");
+      //       break;
+
+      //     case "rabu":
+      //     case "kamis":
+      //       alert("Semangat capai target");
+      //       break;
+
+      //     case "jumat":
+      //       alert("Semangat banget karena mau libur");
+      //       break;
+
+      //     case "sabtu":
+      //     case "minggu":
+      //       alert("Saatnya libur!!!");
+      //       break;
+
+      //     default:
+      //       alert("Input yang kamu masukan salah.");
+      //       break;
+      //   }
+
+      //   perulangan (loop)
+
+      // for loop
+
+      // break = menghentikan paksa nilai perulangan
+      // continue = melewati angka
+
+      for (let i = 0; i <= 10; i++) {
+        if (i === 3) {
+          break;
+        }
+
+        console.log("Saya suka belajar javascript, ini materi ke- " + i);
+      }
+
+      for (let i = 10; i >= 0; i--) {
+        if (i % 2 == 0) {
+          continue;
+        }
+        console.log("count down ... ", i);
+      }
+
+      let mobil = ["avanza", "mazda", "Ertiga", "Honda Jazz"];
+
+      for (let i = 0; i < mobil.length; i++) {
+        console.log("saya punya mobil", mobil[i]);
+      }
+
+      //   while Loop
+      //   let password = "hallojs";
+      //   let input = prompt("masukan password");
+
+      //   while (password != input) {
+      //     input = prompt("Password salah, Masukan kembali!");
+      //   }
+
+      //   alert("Password Benar.");
+
+      let password = "";
+      const batas = 3;
+      let percobaan = 0;
+
+      while (percobaan < batas) {
+        password = prompt("Masukan Password anda.");
+        percobaan++; //saat sekali nyoba, manti percobaan nambah 1
+
+        // kondisi password yang benar
+        if (password === "belajarjs") {
+          alert("password benar ✅ ");
+          break;
+        }
+
+        if (percobaan === batas) {
+          alert("Kamu sudah nyoba 3 kali. Kamu diblokir");
+        } else {
+          alert(
+            "‼️ Password salah, coba lagi sebanyak" + batas - percobaan +" kali lagi,"
+          );
+        }
+      }
+    </script>
+
+    <!-- external js -->
+    <script src="app.js"></script>
+  </body>
+</html>
