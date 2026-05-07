@@ -74,7 +74,7 @@
           <div class="grid-3">
             <div class="form-group">
               <label for="">Product Name</label>
-              <input type="number" id="id" hidden>
+              <input type="number" id="id" hidden />
               <input
                 type="text"
                 name="product_name"
@@ -172,42 +172,49 @@
       if (id === "") {
         // jika ID nya tidak ada mengirimkan data (method POST)
         fetch(api, {
-            method: "POST",
-            headers: {"Content-Type" : "application/json"},
-            body : body,
-            // jika data sudah dikirim, selanjutnya buat form nya menjadi kosong.
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: body,
+          // jika data sudah dikirim, selanjutnya buat form nya menjadi kosong.
         }).then(() => {
-            resetForm(); //mengosongkan form
-            getData(); //refresh datanya.
+          resetForm(); //mengosongkan form
+          getData(); //refresh datanya.
         });
       } else {
         fetch(api + "/" + id, {
-            method: "PUT",
-            headers: {"Content-Type" : "application/json"},
-            body : body,
-            // jika data sudah dikirim, selanjutnya buat form nya menjadi kosong.
+          method: "PUT",
+          headers: { "Content-Type": "application/json" },
+          body: body,
+          // jika data sudah dikirim, selanjutnya buat form nya menjadi kosong.
         }).then(() => {
-            resetForm(); //mengosongkan form
-            getData(); //refresh datanya.
+          resetForm(); //mengosongkan form
+          getData(); //refresh datanya.
         });
       }
     });
 
-    function editData(id, product_name, image){
-        document.getElementById("id").value = id
-        document.getElementById("productName").value = product_name
-        document.getElementById("imageProduct").value = image
+    function editData(id, product_name, image) {
+      document.getElementById("id").value = id;
+      document.getElementById("productName").value = product_name;
+      document.getElementById("imageProduct").value = image;
     }
 
-
-
+    function hapusData(id) {
+      if (confirm("Yakin nih mau dihapus?")) {
+        fetch(api + "/" + id, {
+          method: "DELETE",
+        }).then(() => {
+          resetForm(); //mengosongkan form
+          getData(); //refresh datanya.
+        });
+      }
+    }
 
     // ngehpus form agar kosong
-    function resetForm(){
-        form.reset();
-        document.getElementById("id").value = ""
+    function resetForm() {
+      form.reset();
+      document.getElementById("id").value = "";
     }
-
 
     getData();
   </script>
