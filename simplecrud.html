@@ -115,8 +115,8 @@
                 />
               </td>
               <td>
-                <a href="">edit</a>
-                <a href="">delete</a>
+                <button onclick="edit">edit</button>
+                <button onclick="edit">delete</button>
               </td>
             </tr>
           </tbody>
@@ -148,8 +148,8 @@
                 />
               </td>
               <td>
-                <a href="">edit</a>
-                <a href="">delete</a>
+                <button onclick="editData('${item.id}', '${item.product_name}', '${item.image}')">edit</button>
+                <button onclick="hapusData('${item.id}')">delete</button>
               </td>
             </tr>
             `;
@@ -192,6 +192,8 @@
         });
       }
     });
+
+
 
 
     // ngehpus form agar kosong
