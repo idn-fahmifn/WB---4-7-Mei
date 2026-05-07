@@ -18,6 +18,8 @@
 
     <button type="button" onclick="return showJajargenjang();">Jajar Genjang</button>
 
+    <button type="button" onclick="return show();">Tampikan Data</button>
+
     <!-- internal js -->
     <script>
       console.log("Hallo saya belajar javascript");
@@ -306,6 +308,31 @@
       }
 
       // alas * tinggi
+
+      // asyncronus ambil data dari sebuah variable array
+
+      const produk = [
+        { id : 1, nama : "sepatu", harga : 250000 },
+        { id : 2, nama : "sandal", harga : 100000 },
+        { id : 3, nama : "tas", harga : 300000 },
+        { id : 4, nama : "sabuk", harga : 50000 },
+        { id : 5, nama : "topi", harga : 75000 }
+      ]
+
+      // hanya mengambil data
+      async function allproduct() {
+        await new Promise(resolve => setTimeout(resolve, 3000))
+        return produk
+      }
+
+      // untuk menampilkan data
+      async function show() {
+
+        console.log("Sedang menampilkan data ....")
+        const allData = await allproduct();
+        console.log('Berikut data produk', allData)
+        
+      }
 
 
       
