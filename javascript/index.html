@@ -10,6 +10,14 @@
       Klik Me
     </button>
 
+    <button type="button" onclick="return loginSaya();">Login</button>
+
+    <button type="button" onclick="return showPersegi();">Persegi</button>
+
+    <button type="button" onclick="return showSegitiga();">Segitiga</button>
+
+    <button type="button" onclick="return showJajargenjang();">Jajar Genjang</button>
+
     <!-- internal js -->
     <script>
       console.log("Hallo saya belajar javascript");
@@ -215,28 +223,93 @@
 
       //   alert("Password Benar.");
 
-      let password;
-      const batas = 3;
-      let percobaan = 0;
+      // function
+      function loginSaya() {
+        let password;
+        const batas = 3;
+        let percobaan = 0;
 
-      while (percobaan < batas) {
-        password = prompt("Masukan Password anda.");
-        percobaan++; //saat sekali nyoba, manti percobaan nambah 1
+        while (percobaan < batas) {
+          password = prompt("Masukan Password anda.");
+          percobaan++; //saat sekali nyoba, manti percobaan nambah 1
 
-        // kondisi password yang benar
-        if (password === "belajarjs") {
-          alert("password benar ✅ ");
-          break;
-        }
+          // kondisi password yang benar
+          if (password === "belajarjs") {
+            alert("password benar ✅ ");
+            break;
+          }
 
-        if (percobaan === batas) {
-          alert("Kamu sudah nyoba 3 kali. Kamu diblokir");
-        } else {
-          alert(
-            "‼️ Password salah, coba lagi sebanyak" + Number(batas - percobaan) + " kali lagi,"
-          );
+          if (percobaan === batas) {
+            alert("Kamu sudah nyoba 3 kali. Kamu diblokir");
+          } else {
+            alert(
+              "‼️ Password salah, coba lagi sebanyak " +
+                Number(batas - percobaan) +
+                " kali lagi,",
+            );
+          }
         }
       }
+
+      // function biasa
+
+      function hallo(param, param2) {
+        console.log(`Hallo, selamat ${param}. mas/mba ${param2}`);
+      }
+
+      hallo("pagi", "asep");
+
+      // function expression
+      const hello = function (nama) {
+        // isi function
+
+        return "Hallo selamat pagi, mas/mba " + nama;
+      };
+      console.log(hello("asep"));
+
+      // function expression
+
+      const sapa = (nama) => "Hallo selamat malam, mas/mba" + nama;
+      console.log(sapa("asep"));
+
+      // perhitungan dengan bangun datar
+
+      // persegi => function biasa
+      function persegi(sisi) {
+        return sisi * sisi;
+      }
+
+      function showPersegi() {
+        let inputSisi = Number(prompt("Masukan sisi ..."));
+        alert("Luas persegi adalah = " + persegi(inputSisi));
+      }
+
+      // segitiga => function expression
+      // 1/2 alas * tinggi
+      const segitiga = function (alas, tinggi) {
+        return alas * tinggi / 2;
+      }
+
+      function showSegitiga() {
+        let inputAlas = Number(prompt("Masukan Alas"));
+        let inputTinggi = Number(prompt("Masukan Tinggi"));
+        alert("Luas Segitiga adalah = " + segitiga(inputAlas, inputTinggi));
+      }
+
+      // jajargenjang => function arrow
+      const jajargenjang = (alas, tinggi) => alas * tinggi;
+
+      function showJajargenjang() {
+        let inputAlas = Number(prompt("Masukan Alas"));
+        let inputTinggi = Number(prompt("Masukan Tinggi"));
+        alert("Luas Jajargenjang adalah = " + jajargenjang(inputAlas, inputTinggi));
+      }
+
+      // alas * tinggi
+
+
+      
+
     </script>
 
     <!-- external js -->
