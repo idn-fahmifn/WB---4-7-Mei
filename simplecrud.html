@@ -70,10 +70,11 @@
         <h1 style="margin-bottom: 24px">
           Simple CRUD HTML, CSS dan Vanilla JS
         </h1>
-        <form action="" method="post">
+        <form id="form">
           <div class="grid-3">
             <div class="form-group">
               <label for="">Product Name</label>
+              <input type="number" id="id" hidden>
               <input
                 type="text"
                 name="product_name"
@@ -127,6 +128,7 @@
   <script>
     const api = "https://69fc3736fce564e259177713.mockapi.io/product";
     const list = document.getElementById("listData");
+    const form = document.getElementById("form");
 
     // Fungsi untuk get data
     function getData() {
@@ -135,7 +137,6 @@
         .then((data) => {
           list.innerHTML = "";
           data.forEach((item) => {
-
             list.innerHTML += `
             <tr>
               <td>${item.product_name}</td>
@@ -151,11 +152,54 @@
                 <a href="">delete</a>
               </td>
             </tr>
-            `
-
+            `;
           });
         });
     }
+
+    // fungsi yang berjalan saat form ditambahkan data
+    form.addEventListener("submit", function (e) {
+      // agar tidak reload saat menyimpan / mengedit data.
+      e.preventDefault();
+
+      // ambil semua nilai yang akan ditambahkan dari form
+      const id = document.getElementById("id").value;
+      const productname = document.getElementById("productName").value;
+      const imageProduct = document.getElementById("imageProduct").value;
+
+      // siapkan data yang akan dikirimkan
+      const body = JSON.stringify({ productname, imageProduct });
+      if (id === "") {
+        // jika ID nya tidak ada mengirimkan data (method POST)
+        fetch(api, {
+            method: "POST",
+            headers: {"Content-Type" : "application/json"},
+            body : body,
+            // jika data sudah dikirim, selanjutnya buat form nya menjadi kosong.
+        }).then(() => {
+            resetForm(); //mengosongkan form
+            getData(); //refresh datanya.
+        });
+      } else {
+        fetch(api + "/" + id, {
+            method: "PUT",
+            headers: {"Content-Type" : "application/json"},
+            body : body,
+            // jika data sudah dikirim, selanjutnya buat form nya menjadi kosong.
+        }).then(() => {
+            resetForm(); //mengosongkan form
+            getData(); //refresh datanya.
+        });
+      }
+    });
+
+
+    // ngehpus form agar kosong
+    function resetForm(){
+        form.reset();
+        document.getElementById("id").value = ""
+    }
+
 
     getData();
   </script>
