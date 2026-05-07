@@ -164,11 +164,11 @@
 
       // ambil semua nilai yang akan ditambahkan dari form
       const id = document.getElementById("id").value;
-      const productname = document.getElementById("productName").value;
-      const imageProduct = document.getElementById("imageProduct").value;
+      const product_name = document.getElementById("productName").value;
+      const image = document.getElementById("imageProduct").value;
 
-      // siapkan data yang akan dikirimkan
-      const body = JSON.stringify({ productname, imageProduct });
+      // siapkan data yang akan dikirimkan (sesuaikan dengan field di API)
+      const body = JSON.stringify({ product_name, image });
       if (id === "") {
         // jika ID nya tidak ada mengirimkan data (method POST)
         fetch(api, {
