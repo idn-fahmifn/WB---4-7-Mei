@@ -22,52 +22,54 @@
         /* border: 0.4px #4e4e4e50 solid; */
       }
 
-      .card{
+      .card {
         width: 90%;
         border: 0.4px #4e4e4e50 solid;
         padding: 24px;
         margin-bottom: 24px;
       }
-      .grid-3{
+      .grid-3 {
         display: grid;
         grid-template-columns: 2fr 2fr 1fr;
         gap: 16px;
       }
 
-      .form-group{
+      .form-group {
         display: flex;
         flex-direction: column;
         justify-content: end;
         gap: 16px;
       }
 
-      input, button{
+      input,
+      button {
         padding: 8px;
       }
 
-      .table-list{
+      .table-list {
         width: 100%;
         border-collapse: collapse;
       }
-      th, td{
+      th,
+      td {
         border: 0.4px #4e4e4e60 solid;
         padding: 16px 8px;
       }
-      
-      .img-product{
+
+      .img-product {
         width: 80px;
         height: 80px;
         object-fit: cover;
         border-radius: 4px;
       }
-
-
     </style>
   </head>
   <body>
     <div class="container">
       <div class="card">
-        <h1 style="margin-bottom: 24px;">Simple CRUD HTML, CSS dan Vanilla JS</h1>
+        <h1 style="margin-bottom: 24px">
+          Simple CRUD HTML, CSS dan Vanilla JS
+        </h1>
         <form action="" method="post">
           <div class="grid-3">
             <div class="form-group">
@@ -96,25 +98,65 @@
       </div>
       <div class="card">
         <table class="table-list">
-            <thead>
-                <th>Product Name</th>
-                <th>Image</th>
-                <th>Action</th>
-            </thead>
-            <tbody id="listData">
-                <tr>
-                    <td>Sandal</td>
-                    <td>
-                        <img src="https://loremflickr.com/2679/429?lock=2659025948095272" class="img-product" alt="">
-                    </td>
-                    <td>
-                        <a href="">edit</a>
-                        <a href="">delete</a>
-                    </td>
-                </tr>
-            </tbody>
+          <thead>
+            <th>Product Name</th>
+            <th>Image</th>
+            <th>Action</th>
+          </thead>
+          <tbody id="listData">
+            <tr>
+              <td>Sandal</td>
+              <td>
+                <img
+                  src="https://loremflickr.com/2679/429?lock=2659025948095272"
+                  class="img-product"
+                  alt=""
+                />
+              </td>
+              <td>
+                <a href="">edit</a>
+                <a href="">delete</a>
+              </td>
+            </tr>
+          </tbody>
         </table>
       </div>
     </div>
   </body>
+
+  <script>
+    const api = "https://69fc3736fce564e259177713.mockapi.io/product";
+    const list = document.getElementById("listData");
+
+    // Fungsi untuk get data
+    function getData() {
+      fetch(api) // mengambil API
+        .then((res) => res.json()) //mengubah response menjadi json.
+        .then((data) => {
+          list.innerHTML = "";
+          data.forEach((item) => {
+
+            list.innerHTML += `
+            <tr>
+              <td>${item.product_name}</td>
+              <td>
+                <img
+                  src="${item.image}"
+                  class="img-product"
+                  alt=""
+                />
+              </td>
+              <td>
+                <a href="">edit</a>
+                <a href="">delete</a>
+              </td>
+            </tr>
+            `
+
+          });
+        });
+    }
+
+    getData();
+  </script>
 </html>
