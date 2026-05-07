@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1 id="title">Hallo JS</h1>
+      <p class="subtitle">
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugiat,
+        quidem.
+      </p>
+      <span class="highlight">Lorem ipsum dolor sit amet.</span>
+
+      <img src="" alt="" id="gambar" />
+      <img src="" alt="" id="gambarBaru" />
+
+      <h1 id="info">Informasi Website</h1>
+
+      <input type="text" value="Asep" id="name" />
+
+      <ul id="listMakan">
+        <li>ini daftar baru</li>
+      </ul>
+
+      <button id="btnClick">Klik Saya</button>
+
+      <input type="text" id="nama" placeholder="Nama Kamu" />
+      <button id="btnNama">Ucapkan!</button>
+      <p id="ucapan"></p>
+    </div>
+
+    <script>
+      // memilih elemen
+      const judul = document.getElementById("title"); //memanggil dengan ID
+      const subTitle = document.getElementsByClassName("subtitle"); //memanggil dengan class
+      const highlight = document.querySelector(".highlight"); //flexible memanggil berdasarkan ID(#) atau class(.)
+
+      console.log(highlight);
+
+      // edit elemen
+      // mengubah text pada tag
+      judul.textContent =
+        "Saat ini saya sedang belajar Document Object Model (DOM)";
+      judul.innerHTML = "<b>Hallo JS</b>";
+
+      //   mengubah atribut
+      //   cara langsung :
+      document.getElementById("gambar").src =
+        "https://www.idn.id/wp-content/uploads/2023/09/Webinar-CompTIA-IDN-1024x1024.png";
+      document.getElementById("gambar").width = 240;
+
+      //   set Attribute
+      const image = document.getElementById("gambarBaru"); //memanggil dengan ID
+      image.setAttribute("alt", "Gambar terbaru");
+      image.setAttribute("width", 240);
+      image.setAttribute(
+        "src",
+        "https://www.idn.id/wp-content/uploads/2023/09/Webinar-CompTIA-IDN-1024x1024.png",
+      );
+
+      //   Perbaiki style
+      const info = document.getElementById("info");
+      info.style.color = "#0088cc";
+      info.style.fontFamily = "Tahoma";
+
+      //   menambah atribut class => biasanya digunakan saat fe nya pake bootsrap / tailwind
+      info.classList.add("text-primary");
+
+      // mengambil nilai pada elemen
+      const nama = document.getElementById("name").value; //ambil value pada input
+
+      console.log(nama);
+
+      const makan = [
+        { nama: "Sate Ayam", harga: "20000" },
+        { nama: "Bakso", harga: "15000" },
+        { nama: "Bubur Ayam", harga: "15000" },
+        { nama: "Mie Ayam", harga: "20000" },
+        { nama: "Salad", harga: "10000" },
+      ];
+
+      const list = document.getElementById("listMakan");
+
+      for (let i in makan) {
+        const li = document.createElement("li");
+        li.textContent = `${makan[i].nama} - Rp. ${makan[i].harga}`;
+        list.appendChild(li);
+      }
+
+      //   event listener
+      const btnClick = document.getElementById("btnClick");
+      btnClick.addEventListener("click", function () {
+        alert("Button berhasil di klik");
+      });
+
+      const name = document.getElementById("nama");
+      const tombol = document.getElementById("btnNama");
+      const ucapan = document.getElementById("ucapan");
+
+      tombol.addEventListener("click", function () {
+        // ambil nilai
+        const inputNama = name.value;
+
+        if (inputNama === "") {
+          ucapan.textContent = "gagal, Field nama tidak boleh kosong.";
+          ucapan.style.color = "#ff0000";
+        } else {
+          ucapan.textContent = `Hallo selamat datang, ${inputNama}`;
+          ucapan.style.color = "#0088cc";
+        }
+      });
+    </script>
+  </body>
+</html>
